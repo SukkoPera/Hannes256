@@ -107,6 +107,7 @@ ramreg_wcs = !rw & !userport_range & addr:xxx6;		// R/W low => Writing. Note tha
 
 // MA8 Generation
 _switchable_range = (!p7 & addr:[1000..FFFF]) # (p7 & addr:[4000..FFFF]);
-_lo = (aec & (p1 # !_switchable_range)) # (!aec & (!p6 # !_switchable_range # p1));
-_hi = (aec & (p0 # !_switchable_range)) # (!aec & (!p6 # !_switchable_range # p0));
+_hi = !_switchable_range # (!aec & !p6) # p0;
+_lo = !_switchable_range # (!aec & !p6) # p1;
 ma8 = (!mux & _lo) # (mux & _hi);
+
