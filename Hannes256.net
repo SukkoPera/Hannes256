@@ -1,13 +1,13 @@
 (export (version D)
   (design
     (source /home/sukko/Documents/kicad/Hannes256/Hannes256.sch)
-    (date "Mon 09 Jan 2023 01:16:18 CET")
+    (date "Tue 14 Mar 2023 08:15:44 CET")
     (tool "Eeschema 5.1.12")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title "Hannes256: C16/+4 256 kB RAM Expansion")
         (company SukkoPera)
-        (rev 3git)
+        (rev 1git)
         (date 2022-11-03)
         (source Hannes256.sch)
         (comment (number 1) (value "Hannes Version (Update 1 with \"TED Feature\")"))
@@ -18,7 +18,7 @@
       (title_block
         (title "Hannes256: C16/+4 256 kB RAM Expansion")
         (company SukkoPera)
-        (rev 3git)
+        (rev 1git)
         (date 2022-09-25)
         (source ram.sch)
         (comment (number 1) (value "Hannes Version (Update 1 with \"TED Feature\")"))
@@ -29,7 +29,7 @@
       (title_block
         (title "Hannes256: C16/+4 256 kB RAM Expansion")
         (company SukkoPera)
-        (rev 3git)
+        (rev 2git)
         (date 2023-01-09)
         (source ras_cas_gen.sch)
         (comment (number 1) (value "Hannes Version (Update 1 with \"TED Feature\")"))
@@ -246,7 +246,7 @@
       (tstamp 63F7FBC6))
     (comp (ref U3)
       (value 74HCT573)
-      (footprint Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm)
+      (footprint Package_SO:SO-20_5.3x12.6mm_P1.27mm)
       (datasheet 74xx/74hc573.pdf)
       (fields
         (field (name MouserPN) 595-SN74HCT573NSR))
@@ -283,7 +283,7 @@
       (tstamp 63EB357C))
     (comp (ref U4)
       (value 74HCT245)
-      (footprint Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm)
+      (footprint Package_SO:SO-20_5.3x12.6mm_P1.27mm)
       (datasheet http://www.ti.com/lit/gpn/sn74LS245)
       (fields
         (field (name MouserPN) 595-SN74HCT245ANSR))
