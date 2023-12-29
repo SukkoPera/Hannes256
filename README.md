@@ -31,9 +31,9 @@ The board needs 3 wires from J3 to be connected to some points on the C16 mainbo
 On the C16:
 * `CS_OUT` must be connected to pin 10 of U11.
 * `CS_IN` must be connected to the **LIFTED** pin 16 of U16: remove the chip from the socket and carefully bend pin 16 so that it no longer gets inserted into the socket, then reinsert the chip and connect the clip to the now-dangling pin.
-* `RESET` must be connected to pin 2 of U9 or to pin 40 of U2, whicheve is easier for you.
+* `RESET` must be connected to pin 2 of U9 or to pin 40 of U2, whichever is easier for you.
 
-(See the Wiki for a picture.)
+(See [here](doc/) for an explanatory picture.)
 
 On the Plus/4 chip numbering is different, but if you're smart enough to fit the board, I'm sure you can also figure out the correct pins :).
 
@@ -49,6 +49,8 @@ Start with [siz's memory test program](http://siz.hu/external/memory_test.prg): 
 
 Then you can pick something from the [Plus/4 World's 256k Support section](https://plus4world.powweb.com/effects/256K_Support): [Future World](https://plus4world.powweb.com/software/Future_World) and [Dream World](https://plus4world.powweb.com/software/Dream_World) are perfect, and [Taurin](https://plus4world.powweb.com/software/Taurin) can be also a good candidate. Be aware that these old demos might use specific loaders that are unlikely to cooperate with an SD2IEC.
 
+Note that some software from that section requires a different expansion (i.e.: *Csory* or something else): that will not work with Hannes256.
+
 ## Programming
 The expansion is controller through a single 8-bit register at $FD16, whose individual bits control the memory configuration:
 * Bit 0/1: Select RAM bank (0-3)
@@ -56,7 +58,7 @@ The expansion is controller through a single 8-bit register at $FD16, whose indi
 * Bit 4/5: Leave at 1 for compatibility with the expansion by CSORY
 * Bit 6: "TED-feature" (added in "Update 1" of the original design):
   * 0: TED always accesses the *default* bank (see below)
-  * 1: TED accesses the RAM*bank selected with bits 0 and 1 (for text, graphic)
+  * 1: TED accesses the RAM-bank selected with bits 0 and 1
 * Bit 7: Set the switch bound:
   * 0: >= $1000
   * 1: >= $4000
@@ -76,7 +78,7 @@ If you want to get this board produced, you are recommended to get [the latest r
 Every release is accompanied by its Bill Of Materials (BOM) file and any relevant notes about it, which you are recommended to read carefully.
 
 ## License
-The Hannes256 documentation, including the design itself, is copyright &copy; SukkoPera 2023 and is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+The Hannes256 documentation, including the design itself, is copyright &copy; SukkoPera 2022-2023 and is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 This documentation is distributed *as is* and WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES whatsoever with respect to its functionality, operability or use, including, without limitation, any implied warranties OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE or infringement. We expressly disclaim any liability whatsoever for any direct, indirect, consequential, incidental or special damages, including, without limitation, lost revenues, lost profits, losses resulting from business interruption or loss of data, regardless of the form of action or legal theory under which the liability may be asserted, even if advised of the possibility or likelihood of such damages.
 
