@@ -33,7 +33,7 @@ On the C16:
 * `CS_IN` must be connected to the **LIFTED** pin 16 of U16: remove the chip from the socket and carefully bend pin 16 so that it no longer gets inserted into the socket, then reinsert the chip and connect the clip to the now-dangling pin.
 * `RESET` must be connected to pin 2 of U9 or to pin 40 of U2, whichever is easier for you.
 
-(See [here](doc/) for an explanatory picture.)
+(See [here](img/installation.jpg) for an explanatory picture.)
 
 On the Plus/4 chip numbering is different, but if you're smart enough to fit the board, I'm sure you can also figure out the correct pins :).
 
