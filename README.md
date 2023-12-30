@@ -6,7 +6,7 @@ Hannes256 is an Open Hardware internal 256 kB RAM Expansion board for the Commod
 ## Summary
 A long time ago, a Plus/4 hacker named [Hannes](https://plus4world.powweb.com/profile/Hannes) devised a way to use more than 64 kB of RAM on the machine. Together with [Solder](https://plus4world.powweb.com/members/Solder) they published [some notes](http://www.solder-synergy.de/plus4/hardware/makers/ram256kb.zip) in order to allow every Plus/4 owner to do the modification on their machines.
 
-The modification is quite long and complex, requiring chips to be replaced, others to be added ("piggybacked"), lots of wires to be soldered and even some tracks to be cut. This is almost unavoidable on the Plus/4 due to the little space available inside the machine, but Commodore 16 owners have more luck in this regard. So I started from Solder's notes, figured out the logic behind it and reimplemented everything in a single board that can be sandwiched between the TED and its socket.
+Unfortunately he modification is quite long and complex, requiring chips to be replaced, others to be added ("piggybacked"), lots of wires to be soldered and even some tracks to be cut. This is almost unavoidable on the Plus/4 due to the little space available inside the machine, but Commodore 16 owners have more luck in this regard. So I started from Solder's notes, figured out the logic behind it and reimplemented everything in a single board that can be sandwiched between the TED and its socket.
 
 A 256 kB Hannes-style RAM expansion is first of all a standard 64 kB RAM expansion, so your C16 will immediately gain compatibility with all the software developed for the Plus/4, while also being able to run any software that requires 256 kB.
 
@@ -19,11 +19,14 @@ This project uses some SMD components due to space constraints, you are recommen
 
 U5 and U6 can either be 74x157 or 74x257, as they are permanently enabled. I recommend using chips from the HCT family, but LS will do. Do NOT use HC.
 
-The actual 41245 RAM chips have been out of production for ages but they can still be bought on AliExpress & similar sites.
+The actual 41256 RAM chips have been out of production for ages but they can still be bought on AliExpress & similar sites.
 
 You can connect a switch to U2 if you want to be able to switch back to 16 kB without having to open the case again. Honestly I just wouldn't bother, there is virtually no software that requires no more than 16 kB and it should just be fixed if this is really the case.
 
 The board was accurately sized to fit alongside the CPU in a C16, but if you are using a CPU replacement it might just not physically fit. The same applies if you are using a Commodore 116, on which the board is not tested but it should theoretically work. I am sorry for that, feel free to redesign it and adjust the shape accordingly, it's easy to do with open source hardware.
+
+### RAM Compatibility
+I have used NEC D41256C-15 chips for my own testing. These have 150 ns access time which is probably as slow as you can go (The TED architecture should work even with 200 ns but I doubt you will find any RAMs that are that slow). This probably means that many other - if not all - 256k x 1 RAMs will work.
 
 ## Installation
 The board needs 3 wires from J3 to be connected to some points on the C16 mainboard. You can either solder them or use clips and perform a fully solderless installation.
@@ -42,7 +45,7 @@ The basic idea behind the Hannes-style memory expansion mechanism is to intercep
 
 We are bound to using 41256 (256k x 1) RAM chips, as their internal matrix is organized in 256 rows by 1024 columns and thus only need rows A0-A7 for RAS-only refresh (which is the way the TED performs DRAM refresh). 44256 chips (256k x 4) would make life easier but they are generally organized in 512 rows and would need a much more complex refresh logic, in order to refresh the pages that are currently not selected.
 
-This board has 14 chips (!) thus it is quite likely to significantly increase the power draw of your machine. Make sure to be using a good power supply.
+This board has 14 chips (!) thus it is quite likely to significantly increase the power draw of your machine. **Make sure to be using a good power supply**.
 
 ## Testing
 Start with [siz's memory test program](http://siz.hu/external/memory_test.prg): it must detect the 256 kB and the full test should complete without reporting any errors.
