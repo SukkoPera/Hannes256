@@ -6,7 +6,7 @@ Hannes256 is an Open Hardware internal 256 kB RAM Expansion board for the Commod
 ## Summary
 A long time ago, a Plus/4 hacker named [Hannes](https://plus4world.powweb.com/profile/Hannes) devised a way to use more than 64 kB of RAM on the machine. Together with [Solder](https://plus4world.powweb.com/members/Solder) they published [some notes](http://www.solder-synergy.de/plus4/hardware/makers/ram256kb.zip) in order to allow every Plus/4 owner to do the modification on their machines.
 
-Unfortunately he modification is quite long and complex, requiring chips to be replaced, others to be added ("piggybacked"), lots of wires to be soldered and even some tracks to be cut. This is almost unavoidable on the Plus/4 due to the little space available inside the machine, but Commodore 16 owners have more luck in this regard. So I started from Solder's notes, figured out the logic behind it and reimplemented everything in a single board that can be sandwiched between the TED and its socket.
+Unfortunately the modification is quite long and complex, requiring chips to be replaced, others to be added ("piggybacked"), lots of wires to be soldered and even some tracks to be cut. This is almost unavoidable on the Plus/4 due to the little space available inside the machine, but Commodore 16 owners have more luck in this regard. So I started from Solder's notes, figured out the logic behind it and reimplemented everything in a single board that can be sandwiched between the TED and its socket.
 
 A 256 kB Hannes-style RAM expansion is first of all a standard 64 kB RAM expansion, so your C16 will immediately gain compatibility with all the software developed for the Plus/4, while also being able to run any software that requires 256 kB.
 
