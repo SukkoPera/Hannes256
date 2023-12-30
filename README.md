@@ -106,4 +106,3 @@ You can also buy me a coffee if you want:
 * Hannes and Solder for the original design and documentation.
 * Levente Hársfalvi (TLC) for plenty of help, in particular with the MOS 6529 replacement circuit.
 * siz for the memory test utility.
-* Alit Design for the [Crotah font](https://www.fontspace.com/crotah-font-f86873) used for the logo.
