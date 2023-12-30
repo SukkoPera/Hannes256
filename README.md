@@ -19,6 +19,8 @@ This project uses some SMD components due to space constraints, you are recommen
 
 U5 and U6 can either be 74x157 or 74x257, as they are permanently enabled. I recommend using chips from the HCT family, but LS will do. Do NOT use HC.
 
+Be careful with U3 and U4: these chips come in different widths. The board is made for 5.30 mm wide chips (which are the ones indicated in the BOM), you can probably fit wider ones but you are on your own.
+
 The actual 41256 RAM chips have been out of production for ages but they can still be bought on AliExpress & similar sites.
 
 You can connect a switch to U2 if you want to be able to switch back to 16 kB without having to open the case again. Honestly I just wouldn't bother, there is virtually no software that requires no more than 16 kB and it should just be fixed if this is really the case.
@@ -39,6 +41,8 @@ On the C16:
 (See [here](img/installation.jpg) for an explanatory picture.)
 
 On the Plus/4 chip numbering is different, but if you're smart enough to fit the board, I'm sure you can also figure out the correct pins :).
+
+No idea about the C116, sorry.
 
 ## Technical Notes
 The basic idea behind the Hannes-style memory expansion mechanism is to intercept the Userport /CS range ($FD10-FD1F, PLA pin 16) and further decode it, feeding $FD10 only to its original purpose and using the remaining addresses for other stuff. In particular, $FD16 (64790) will be the control register for our RAM expansion (see ioarea.txt for further address assignments).
@@ -88,7 +92,7 @@ This documentation is distributed *as is* and WITHOUT ANY EXPRESS OR IMPLIED WAR
 ## Support the Project
 If you want to get some boards manufactured, you can get them from PCBWay through this link:
 
-[![PCB from PCBWay](https://www.pcbway.com/project/img/images/frompcbway.png)](https://www.pcbway.com/project/shareproject/Hannes256_V3_Internal_64_kB_RAM_Expansion_for_the_Commodore_16_407c6d0f.html)
+[![PCB from PCBWay](https://www.pcbway.com/project/img/images/frompcbway.png)](https://www.pcbway.com/project/shareproject/Hannes256_256_kB_RAM_Expansion_for_the_Commodore_16_4_b94217cd.html)
 
 You get my gratitude and cheap, professionally-made and good quality PCBs, I get some credit that will help with this and [other projects](https://www.pcbway.com/project/member/?bmbno=72D33927-5EF6-42). You won't even have to worry about the various PCB options, it's all pre-configured for you!
 
