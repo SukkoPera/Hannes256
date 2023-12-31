@@ -27,6 +27,8 @@ You can connect a switch to U2 if you want to be able to switch back to 16 kB wi
 
 The board was accurately sized to fit alongside the CPU in a C16, but if you are using a CPU replacement it might just not physically fit. The same applies if you are using a Commodore 116, on which the board is not tested but it should theoretically work. I am sorry for that, feel free to redesign it and adjust the shape accordingly, it's easy to do with open source hardware.
 
+Finally, U2 can either be a GAL20 or a GAL22: the former you can buy cheaply from AliExpress while the latter can be found new made by Atmel (ATF22-whatever). Whichever you choose, make sure to program it with the corresponding file from the [gal directory](gal/).
+
 ### RAM Compatibility
 I have used NEC D41256C-15 chips for my own testing. These have 150 ns access time which is probably as slow as you can go (The TED architecture should work even with 200 ns but I doubt you will find any RAMs that are that slow). This probably means that many other - if not all - 256k x 1 RAMs will work.
 
@@ -59,7 +61,7 @@ Then you can pick something from the [Plus/4 World's 256k Support section](https
 Note that some software from that section requires a different expansion (i.e.: *Csory* or something else): that will not work with Hannes256.
 
 ## Programming
-The expansion is controller through a single 8-bit register at $FD16, whose individual bits control the memory configuration:
+The expansion is controlled through a single 8-bit register at $FD16, whose individual bits control the memory configuration:
 * Bit 0/1: Select RAM bank (0-3)
 * Bit 2/3: Leave at 1 in order to allow compaibility with larger memory expansions
 * Bit 4/5: Leave at 1 for compatibility with the expansion by CSORY
