@@ -124,9 +124,7 @@ You can also buy me a coffee if you want:
 <a href='https://ko-fi.com/L3L0U18L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Credits
-- Thanks to Arpad Darvas for coming up with the Plus/4 installation procedure and documenting it.
-
-## Thanks
 * Hannes and Solder for the original design and documentation.
 * Levente Hársfalvi (TLC) for plenty of help, in particular with the MOS 6529 replacement circuit.
 * siz for the memory test utility.
+* Arpad Darvas for coming up with the Plus/4 installation procedure and documenting it.
