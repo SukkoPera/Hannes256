@@ -35,16 +35,35 @@ I have used NEC D41256C-15 chips for my own testing. These have 150 ns access ti
 ## Installation
 The board needs 3 wires from J3 to be connected to some points on the C16 mainboard. You can either solder them or use clips and perform a fully solderless installation.
 
-On the C16:
+### Commodore 16:
 * `CS_OUT` must be connected to pin 10 of U11.
 * `CS_IN` must be connected to the **LIFTED** pin 16 of U16: remove the chip from the socket and carefully bend pin 16 so that it no longer gets inserted into the socket, then reinsert the chip and connect the clip to the now-dangling pin.
 * `RESET` must be connected to pin 2 of U9 or to pin 40 of U2, whichever is easier for you.
 
-(See [here](img/installation.jpg) for an explanatory picture.)
+See [here](img/installation.jpg) for an explanatory picture.
 
-On the Plus/4 chip numbering is different, but if you're smart enough to fit the board, I'm sure you can also figure out the correct pins :).
+### Plus/4
+Installation on the Plus/4 is much trickier, due to the very little space available, but it can still be done i.
 
-No idea about the C116, sorry.
+First of all, note the chip numbering is different, so:
+* `CS_OUT` must be connected to pin 19 of U5.
+* `CS_IN` must be connected to the **LIFTED** pin 16 of U19.
+* `RESET` must be connected to pin 12 of U7 or to any other convenient /RESET point.
+
+Then, the installation requires some work inside the machine:
+1. Completely remove the metal shield around the TED chip
+2. Remove the TED socket
+3. Unsolder transistor Q2 and move it further left using wires
+4. Remove the 10uF capacitor, replace it with a new one with longer legs and move it further to the right
+5. Solder Hannes512 in place of the TED
+6. Solder the cables to the connection points
+7. Put a heatsink on the TED
+8. Add some electrical tape to the bottom of the keyboard to insulate the two points that would touch the board
+
+Here are come pictures that should hopefully make things clearer: [1](img/plus4_installation_1.jpeg), [2](img/plus4_installation_2.jpeg), [3](img/plus4_installation_3.jpeg).
+
+### Commodore 116
+No idea at the moment, sorry. Please report back if you manage to carry out an installation.
 
 ## Technical Notes
 The basic idea behind the Hannes-style memory expansion mechanism is to intercept the Userport /CS range ($FD10-FD1F, PLA pin 16) and further decode it, feeding $FD10 only to its original purpose and using the remaining addresses for other stuff. In particular, $FD16 (64790) will be the control register for our RAM expansion (see ioarea.txt for further address assignments).
@@ -103,6 +122,9 @@ Also, if you still have to register, [you can use this link](https://www.pcbway.
 You can also buy me a coffee if you want:
 
 <a href='https://ko-fi.com/L3L0U18L' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+## Credits
+- Thanks to Arpad Darvas for coming up with the Plus/4 installation procedure and documenting it.
 
 ## Thanks
 * Hannes and Solder for the original design and documentation.
