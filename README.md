@@ -60,7 +60,7 @@ Then, the installation requires some work inside the machine:
 7. Put a heatsink on the TED
 8. Add some electrical tape to the bottom of the keyboard to insulate the two points that would touch the board
 
-Here are come pictures that should hopefully make things clearer: [1](img/plus4_installation_1.jpeg), [2](img/plus4_installation_2.jpeg), [3](img/plus4_installation_3.jpeg).
+Here are some pictures that should hopefully make things clearer: [1](img/plus4_installation_1.jpeg), [2](img/plus4_installation_2.jpeg), [3](img/plus4_installation_3.jpeg).
 
 ### Commodore 116
 No idea at the moment, sorry. Please report back if you manage to carry out an installation.
