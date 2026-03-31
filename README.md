@@ -43,24 +43,18 @@ The board needs 3 wires from J3 to be connected to some points on the C16 mainbo
 See [here](img/installation.jpg) for an explanatory picture.
 
 ### Plus/4
-Installation on the Plus/4 is much trickier, due to the very little space available, but it can still be done i.
-
-First of all, note the chip numbering is different, so:
-* `CS_OUT` must be connected to pin 19 of U5.
-* `CS_IN` must be connected to the **LIFTED** pin 16 of U19.
-* `RESET` must be connected to pin 12 of U7 or to any other convenient /RESET point.
-
-Then, the installation requires some work inside the machine:
-1. Completely remove the metal shield around the TED chip
-2. Remove the TED socket
-3. Unsolder transistor Q2 and move it further left using wires
-4. Remove the 10uF capacitor, replace it with a new one with longer legs and move it further to the right
-5. Solder Hannes512 in place of the TED
-6. Solder the cables to the connection points
-7. Put a heatsink on the TED
-8. Add some electrical tape to the bottom of the keyboard to insulate the two points that would touch the board
-
-Here are some pictures that should hopefully make things clearer: [1](img/plus4_installation_1.jpeg), [2](img/plus4_installation_2.jpeg), [3](img/plus4_installation_3.jpeg).
+Installation on the Plus/4 is much trickier, due to the very little space available, but it can still be carried out, if you are handy enough to do some work inside the machine:
+1. Completely remove the metal shield around the TED chip.
+2. Remove the TED socket.
+3. Unsolder transistor Q2 and [move it further to the left using wires](img/plus4_installation_2.jpeg).
+4. Remove the 10uF capacitor, replace it with a new one with longer legs and [move it further to the right](img/plus4_installation_1.jpeg).
+5. Solder Hannes512 in place of the TED.
+6. Solder the cables to the connection points:
+   * `CS_OUT` must be connected to pin 19 of U5.
+   * `CS_IN` must be connected to the **LIFTED** pin 16 of U19.
+   * `RESET` must be connected to pin 12 of U7 or to any other convenient /RESET point.
+8. Put a heatsink on the TED.
+9. Add some electrical tape to the bottom of the keyboard to [insulate the two screws that would touch the board](img/plus4_installation_3.jpeg).
 
 ### Commodore 116
 No idea at the moment, sorry. Please report back if you manage to carry out an installation.
