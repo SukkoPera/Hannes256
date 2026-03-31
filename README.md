@@ -33,7 +33,7 @@ Finally, U2 can either be a GAL20 or a GAL22: the former you can buy cheaply fro
 I have used NEC D41256C-15 chips for my own testing. These have 150 ns access time which is probably as slow as you can go (The TED architecture should work even with 200 ns but I doubt you will find any RAMs that are that slow). This probably means that many other - if not all - 256k x 1 RAMs will work.
 
 ## Installation
-The board needs 3 wires from J3 to be connected to some points on the C16 mainboard. You can either solder them or use clips and perform a fully solderless installation.
+The board needs 3 wires from J3 to be connected to some points on the mainboard. You can either solder them or use clips and perform a fully solderless installation.
 
 ### Commodore 16:
 * `CS_OUT` must be connected to pin 10 of U11.
